@@ -33,9 +33,14 @@ body {
 	line-height: 1;
 }
 
-ol, ul {
-	list-style: none;
+
+ul ol,{list-style: none;
 }
+
+#list2{
+ display: inline;
+}						
+
 
 blockquote, q {
 	quotes: none;
@@ -211,6 +216,7 @@ input, select, textarea {
 	p {
 		margin: 0 0 2em 0;
 	}
+	
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #3c3b3b;
@@ -2411,15 +2417,20 @@ input, select, textarea {
 			padding-left: 0.25em;
 		}
 
+	
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
+		
+		
 	}
 
 		ul li {
 			padding-left: 0.5em;
 			display: list-item;
+			margin: 3px 0;
+			
 		}
 
 		ul.alt {
