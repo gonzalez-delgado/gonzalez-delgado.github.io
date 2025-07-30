@@ -1,3 +1,4 @@
+
 <!-- <meta http-equiv="Refresh" content="0; url='https://gonzalez-delgado.github.io/softwares'" /> -->
 <!DOCTYPE HTML>
 <!--
@@ -15,59 +16,66 @@
 
 	
 <style>
-
-.imagejupy img,
-.imager img {
-  border: 3px solid transparent;
-  box-sizing: border-box;
+#wrapper {
+  margin-left: 100px;
+  margin-right: 10px;
 }
 
-/* First two boxes (WARIO and WASCO) */
-.imagejupy.orange-border img {
-  border-color: orange;
+/* Container row setup */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2em;
+  justify-content: flex-start;
 }
 
-/* Last two boxes (PCIdep and torustest) */
-.imager.blue-border img {
-  border-color: #007BFF;
-}
-
+/* Each box adapts its width to the image aspect ratio, with fixed height */
 .work-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px; /* Uniform height */
   position: relative;
-  overflow: hidden;
+  flex: 0 0 auto;
 }
 
+/* The clickable container */
 .box-link {
-  display: block;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  text-decoration: none;
 }
 
+
+
+/* Image: same height for all, width adjusts automatically */
 .box-link img {
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
+/* Colored borders */
 .work-item.orange-border {
   border: 3px solid orange;
 }
-
 .work-item.blue-border {
   border: 3px solid #007BFF;
 }
 
-
-.work-item h3 {
-  color: white !important;
-}
-
+/* Overlay: placed above image but constrained inside */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   opacity: 0;
@@ -78,12 +86,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  pointer-events: none; /* Prevents overlay from blocking clicks */
 }
 
 .box-link:hover .overlay {
   opacity: 1;
+  pointer-events: auto;
 }
 
+/* Text inside overlay */
 .overlay h3 {
   margin-bottom: 0.5em;
   font-size: 1.2em;
@@ -92,6 +103,17 @@
 .overlay p {
   font-size: 0.9em;
   line-height: 1.4em;
+}
+
+/* Prevent padding/margin distortion */
+.box-link, .box-link img {
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: make all h3 in boxes white by default */
+.work-item h3 {
+  color: white !important;
 }
 </style>
 
@@ -112,22 +134,21 @@
 								<li><a href="talks.html">Talks & Activities</a></li>
 								<li><a href="teaching.html">Teaching & Advising</a></li>
 							</ul>
-					</header>
+				</header>
 
 			<!-- Main -->
-					<div id="main">							
-									
-								
+					<div id="main">											
 						
+					
 
-				<!-- Two -->
-					<section id="one">
-						<h2>Softwares</h2>
-						
-						<h3> For Structural Biologists</h3>
-						<div class="row">
-						
-							<article class="col-3 col-5-xsmall work-item">
+			<!-- Two -->
+				<section id="one">
+					<h2>Softwares</h2>
+					
+					<h3> For Structural Biologists</h3>
+					<div class="row">
+					
+						<article class="xsmall work-item">
   <a href="https://gitlab.laas.fr/moma/methods/analysis/WARIO" class="box-link">
     <img src="images/wario.png" alt="" />
     <div class="overlay">
@@ -136,9 +157,9 @@
     </div>
   </a>
 </article> 
-						
-						
-							<article class="col-3 col-5-xsmall work-item">
+					
+					
+						<article class="xsmall work-item">
   <a href="https://gitlab.laas.fr/moma/WASCO" class="box-link">
     <img src="images/wasco.png" alt="" />
     <div class="overlay">
@@ -147,16 +168,16 @@
     </div>
   </a>
 </article>
-							
-							</div>
-							
-							<br>
-							
-							<h3> Wide applicability</h3>
-							<div class="row">
-							
-							
-							<article class="col-2 col-4-xsmall work-item">
+						
+						</div>
+						
+						<br>
+						
+						<h3> Wide applicability</h3>
+						<div class="row">
+						
+						
+						<article class="xsmall work-item">
   <a href="https://github.com/gonzalez-delgado/PCIdep" class="box-link">
     <img src="images/pcidep.png" alt="" />
     <div class="overlay">
@@ -165,8 +186,8 @@
     </div>
   </a>
 </article>
-							
-							<article class="col-2 col-4-xsmall work-item">
+						
+						<article class="xsmall work-item">
   <a href="https://github.com/gonzalez-delgado/torustest" class="box-link">
     <img src="images/torustest.png" alt="" />
     <div class="overlay">
@@ -175,15 +196,15 @@
     </div>
   </a>
 </article>
-							
-							
 						
-					</section>
+						
+					
+				</section>
 
 
 								
 
-							</article>
+								</article>
 			
 
 					
