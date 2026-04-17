@@ -1,217 +1,317 @@
-
 <!-- <meta http-equiv="Refresh" content="0; url='https://gonzalez-delgado.github.io/softwares'" /> -->
 <!DOCTYPE HTML>
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Javier González-Delgado | Softwares</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets_2/css/main.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<head>
+	<title>Javier González-Delgado | Softwares</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets_2/css/main.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-	
-<style>
-#wrapper {
-  margin-left: 100px;
-  margin-right: 10px;
-}
+	<style>
+		#wrapper {
+			margin-left: 60px;
+			margin-right: 40px;
+		}
 
-/* Container row setup */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.2em;
-  justify-content: flex-start;
-}
+		.software-intro {
+			max-width: 900px;
+			margin-bottom: 2rem;
+		}
 
-/* Each box adapts its width to the image aspect ratio, with fixed height */
-.work-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 250px; /* Uniform height */
-  position: relative;
-  flex: 0 0 auto;
-}
+		.software-columns {
+			display: grid;
+			grid-template-columns: repeat(2, max-content);
+			gap: 2rem;
+			align-items: start;
+			justify-content: start;
+		}
 
-/* The clickable container */
-.box-link {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+		.software-column {
+			background: #ffffff;
+			border: 1px solid rgba(0, 0, 0, 0.08);
+			border-radius: 18px;
+			padding: 1.5rem;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+			width: fit-content;
+			max-width: 100%;
+			box-sizing: border-box;
+		}
 
+		/* Force Wide Applicability onto second row */
+		.software-column.general {
+			grid-column: 1 / 2;
+			grid-row: 2;
+		}
 
+		.software-column h3 {
+			margin-top: 0;
+			margin-bottom: 1rem;
+			font-size: 1.25rem;
+			letter-spacing: 0.02em;
+			border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+			padding-bottom: 0.5rem;
+			display: inline-block;
+		}
 
-/* Image: same height for all, width adjusts automatically */
-.box-link img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
+		.card-scroll {
+			max-width: 100%;
+			overflow-x: auto;
+			padding-bottom: 0.3rem;
+		}
 
-/* Colored borders */
-.work-item.orange-border {
-  border: 3px solid orange;
-}
-.work-item.blue-border {
-  border: 3px solid #007BFF;
-}
+		.card-scroll::-webkit-scrollbar {
+			height: 6px;
+		}
 
-/* Overlay: placed above image but constrained inside */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  pointer-events: none; /* Prevents overlay from blocking clicks */
-}
+		.card-scroll::-webkit-scrollbar-thumb {
+			background: rgba(0, 0, 0, 0.2);
+			border-radius: 3px;
+		}
 
-.box-link:hover .overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
+		.card-grid {
+			display: inline-flex;
+			gap: 1rem;
+			align-items: stretch;
+			flex-wrap: nowrap;
+			width: max-content;
+		}
 
-/* Text inside overlay */
-.overlay h3 {
-  margin-bottom: 0.5em;
-  font-size: 1.2em;
-}
+		.software-card {
+			flex: 0 0 230px;
+			width: 230px;
+			height: 405px;
+			display: flex;
+			flex-direction: column;
+			text-decoration: none;
+			color: inherit;
+			background: #fff;
+			border: 1px solid rgba(0, 0, 0, 0.06);
+			border-radius: 16px;
+			overflow: hidden;
+			transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+			box-shadow: none;
+			box-sizing: border-box;
+		}
 
-.overlay p {
-  font-size: 0.9em;
-  line-height: 1.4em;
-}
+		.software-card:hover {
+			box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+			border-color: rgba(0, 0, 0, 0.14);
+			background-color: #fcfcfc;
+		}
 
-/* Prevent padding/margin distortion */
-.box-link, .box-link img {
-  margin: 0;
-  padding: 0;
-}
+		.card-image {
+			width: 100%;
+			height: 190px;
+			background: #f6f7f9;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+		}
 
-/* Optional: make all h3 in boxes white by default */
-.work-item h3 {
-  color: white !important;
-}
-</style>
+		.card-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
 
+		.card-content {
+			padding: 0.9rem 1rem 1rem 1rem;
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+
+		.card-content h4 {
+			margin: 0 0 0.45rem 0;
+			font-size: 1.05rem;
+			font-weight: 600;
+			color: #222;
+			line-height: 1.2;
+		}
+
+		.card-content p {
+			margin: 0;
+			font-size: 0.9rem;
+			line-height: 1.5;
+			color: #555;
+			flex: 1;
+		}
+
+		.card-tag {
+			display: inline-block;
+			margin-top: 0.7rem;
+			font-size: 0.7rem;
+			font-weight: 600;
+			letter-spacing: 0.03em;
+			text-transform: uppercase;
+			color: #666;
+		}
+
+		.structural .software-card {
+			border-top: 4px solid #d98c00;
+		}
+
+		.general .software-card {
+			border-top: 4px solid #2b6cb0;
+		}
+
+		.genetics .software-card {
+			border-top: 4px solid #2f855a;
+		}
+
+		@media screen and (max-width: 980px) {
+			#wrapper {
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+
+			.software-columns {
+				grid-template-columns: 1fr;
+			}
+
+			.software-column.general {
+				grid-column: auto;
+				grid-row: auto;
+			}
+
+			.software-column {
+				max-width: 100%;
+			}
+		}
+	</style>
 </head>
-	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body class="is-preload">
+	<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="#"></a></h1>
-						<nav class="links">
-							<ul>
-								<li><a href="index.html">About</a></li>
-								<li><a href="publications.html">Publications</a></li>
-								<li><a href="softwares.html">Softwares</a></li>
-								<li><a href="talks.html">Talks</a></li>
-								<li><a href="teaching.html">Teaching & Advising</a></li>
-							</ul>
-				</header>
+		<header id="header">
+			<h1><a href="#"></a></h1>
+			<nav class="links">
+				<ul>
+					<li><a href="index.html">About</a></li>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="softwares.html">Softwares</a></li>
+					<li><a href="talks.html">Talks</a></li>
+					<li><a href="teaching.html">Teaching & Advising</a></li>
+				</ul>
+			</nav>
+		</header>
 
-			<!-- Main -->
-					<div id="main">											
+		<div id="main">
+			<section id="one">
+				<h2>Softwares</h2>
+
+				<div class="software-intro">
+					<p>
+						This page gathers software and computational tools developed (and mantained) in my research.
 						
-					
+					</p>
+				</div>
 
-			<!-- Two -->
-				<section id="one">
-					<h2>Softwares</h2>
-					
-					<h3> For Structural Biologists</h3>
-					<div class="row">
-					
-						<article class="xsmall work-item">
-  <a href="https://gitlab.laas.fr/moma/methods/analysis/WARIO" class="box-link">
-    <img src="images/wario.png" alt="" />
-    <div class="overlay">
-      <h3>WARIO</h3>
-      <p>A Jupyter notebook to characterize IDP ensembles as a weighted family of contact maps.</p>
-    </div>
-  </a>
-</article> 
-					
-					
-						<article class="xsmall work-item">
-  <a href="https://gitlab.laas.fr/moma/WASCO" class="box-link">
-    <img src="images/wasco.png" alt="" />
-    <div class="overlay">
-      <h3>WASCO</h3>
-      <p>A Wasserstein-based Jupyter notebook to compare IDP ensembles.</p>
-    </div>
-  </a>
-</article>
-						
+				<div class="software-columns">
+
+					<div class="software-column structural">
+						<h3>For structural biologists</h3>
+						<div class="card-scroll">
+							<div class="card-grid">
+								<a href="https://gitlab.laas.fr/moma/methods/analysis/WARIO" class="software-card">
+									<div class="card-image">
+										<img src="images/wario.png" alt="WARIO preview" />
+									</div>
+									<div class="card-content">
+										<h4>WARIO</h4>
+										<p>
+											A Jupyter notebook to characterize intrinsically disordered protein ensembles
+											as a weighted family of contact maps.
+										</p>
+										<span class="card-tag">Jupyter Notebook</span>
+									</div>
+								</a>
+
+								<a href="https://gitlab.laas.fr/moma/WASCO" class="software-card">
+									<div class="card-image">
+										<img src="images/wasco.png" alt="WASCO preview" />
+									</div>
+									<div class="card-content">
+										<h4>WASCO</h4>
+										<p>
+											A Wasserstein-based Jupyter notebook designed to compare ensembles of
+											intrinsically disordered proteins.
+										</p>
+										<span class="card-tag">Jupyter Notebook</span>
+									</div>
+								</a>
+							</div>
 						</div>
-						
-						<br>
-						
-						<h3> Wide applicability</h3>
-						<div class="row">
-						
-						
-						<article class="xsmall work-item">
-  <a href="https://github.com/gonzalez-delgado/PCIdep" class="box-link">
-    <img src="images/pcidep.png" alt="" />
-    <div class="overlay">
-      <h3>PCIdep</h3>
-      <p>An R package to perform post-clustering inference under arbitrary dependence between features and observations.</p>
-    </div>
-  </a>
-</article>
-						
-						<article class="xsmall work-item">
-  <a href="https://github.com/gonzalez-delgado/torustest" class="box-link">
-    <img src="images/torustest.png" alt="" />
-    <div class="overlay">
-      <h3>torustest</h3>
-      <p>An R package to perform two-sample goodness-of-fit tests on the two-dimensional torus using Optimal Transport.</p>
-    </div>
-  </a>
-</article>
-						
-						
-					
-				</section>
-
-
-								
-
-								</article>
-			
-
-					
-
 					</div>
 
-				
+					<div class="software-column genetics">
+						<h3>For Population Geneticists</h3>
+						<div class="card-scroll">
+							<div class="card-grid">
+								<a href=" https://gravellab.github.io/tracts/" class="software-card">
+									<div class="card-image">
+										<img src="images/tracts.png" alt="tracts preview" />
+									</div>
+									<div class="card-content">
+										<h4>tracts</h4>
+										<p>
+											A Python package for modelling ancestry patterns along the genome,
+											including sex-biased migration and X-chromosome admixture.
+										</p>
+										<span class="card-tag">Python Package</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
 
-	</body>
+					<div class="software-column general">
+						<h3>For anyone</h3>
+						<div class="card-scroll">
+							<div class="card-grid">
+								<a href="https://github.com/gonzalez-delgado/PCIdep" class="software-card">
+									<div class="card-image">
+										<img src="images/pcidep.png" alt="PCIdep preview" />
+									</div>
+									<div class="card-content">
+										<h4>PCIdep</h4>
+										<p>
+											An R package for post-clustering inference under arbitrary dependence
+											between features and observations.
+										</p>
+										<span class="card-tag">R Package</span>
+									</div>
+								</a>
+
+								<a href="https://github.com/gonzalez-delgado/torustest" class="software-card">
+									<div class="card-image">
+										<img src="images/torustest.png" alt="torustest preview" />
+									</div>
+									<div class="card-content">
+										<h4>torustest</h4>
+										<p>
+											An R package for two-sample goodness-of-fit testing on the two-dimensional
+											torus using optimal transport.
+										</p>
+										<span class="card-tag">R Package</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+		</div>
+
+	</div>
+</body>
 </html>
