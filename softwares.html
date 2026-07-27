@@ -20,11 +20,17 @@
 		}
 
 		.software-columns {
-			display: grid;
-			grid-template-columns: repeat(2, max-content);
-			gap: 2rem;
-			align-items: start;
-			justify-content: start;
+			display: flex;
+			flex-direction: column;
+			gap: 0.6rem;
+			align-items: flex-start;
+		}
+
+		.software-row {
+			display: flex;
+			gap: 0.6rem;
+			align-items: flex-start;
+			flex-wrap: wrap;
 		}
 
 		.software-column {
@@ -39,12 +45,6 @@
 			width: fit-content;
 			max-width: 100%;
 			box-sizing: border-box;
-		}
-
-		/* Force Wide Applicability onto second row */
-		.software-column.general {
-			grid-column: 1 / 2;
-			grid-row: 2;
 		}
 
 		.software-column h3 {
@@ -172,13 +172,8 @@
 				margin-right: 20px;
 			}
 
-			.software-columns {
-				grid-template-columns: 1fr;
-			}
-
-			.software-column.general {
-				grid-column: auto;
-				grid-row: auto;
+			.software-row {
+				flex-direction: column;
 			}
 
 			.software-column {
@@ -217,6 +212,64 @@
 
 				<div class="software-columns">
 
+					<div class="software-row">
+					<div class="software-column genetics">
+						<h3>For Population Geneticists</h3>
+						<div class="card-scroll">
+							<div class="card-grid">
+								<a href=" https://gravellab.github.io/tracts/" class="software-card">
+									<div class="card-image">
+										<img src="images/tracts.png" alt="tracts preview" />
+									</div>
+									<div class="card-content">
+										<h4>tracts</h4>
+										<p>
+											A Python package for modelling ancestry patterns along the genome,
+											including sex-biased migration and X-chromosome admixture.
+										</p>
+										<span class="card-tag">Python Package</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="software-column general">
+						<h3>For anyone</h3>
+						<div class="card-scroll">
+							<div class="card-grid">
+								<a href="https://gonzalez-delgado.github.io/PCIdep" class="software-card">
+									<div class="card-image">
+										<img src="images/pcidep.png" alt="PCIdep preview" />
+									</div>
+									<div class="card-content">
+										<h4>PCIdep</h4>
+										<p>
+											An R package for post-clustering inference under arbitrary dependence
+											between features and observations.
+										</p>
+										<span class="card-tag">R Package</span>
+									</div>
+								</a>
+
+								<a href="https://github.com/gonzalez-delgado/torustest" class="software-card">
+									<div class="card-image">
+										<img src="images/torustest.png" alt="torustest preview" />
+									</div>
+									<div class="card-content">
+										<h4>torustest</h4>
+										<p>
+											An R package for two-sample goodness-of-fit testing on the two-dimensional
+											torus using optimal transport.
+										</p>
+										<span class="card-tag">R Package</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					</div>
+
 					<div class="software-column structural">
 						<h3>For structural biologists</h3>
 						<div class="card-scroll">
@@ -246,62 +299,6 @@
 											intrinsically disordered proteins.
 										</p>
 										<span class="card-tag">Jupyter Notebook</span>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="software-column genetics">
-						<h3>For Population Geneticists</h3>
-						<div class="card-scroll">
-							<div class="card-grid">
-								<a href=" https://gravellab.github.io/tracts/" class="software-card">
-									<div class="card-image">
-										<img src="images/tracts.png" alt="tracts preview" />
-									</div>
-									<div class="card-content">
-										<h4>tracts</h4>
-										<p>
-											A Python package for modelling ancestry patterns along the genome,
-											including sex-biased migration and X-chromosome admixture.
-										</p>
-										<span class="card-tag">Python Package</span>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="software-column general">
-						<h3>For anyone</h3>
-						<div class="card-scroll">
-							<div class="card-grid">
-								<a href="https://github.com/gonzalez-delgado/PCIdep" class="software-card">
-									<div class="card-image">
-										<img src="images/pcidep.png" alt="PCIdep preview" />
-									</div>
-									<div class="card-content">
-										<h4>PCIdep</h4>
-										<p>
-											An R package for post-clustering inference under arbitrary dependence
-											between features and observations.
-										</p>
-										<span class="card-tag">R Package</span>
-									</div>
-								</a>
-
-								<a href="https://github.com/gonzalez-delgado/torustest" class="software-card">
-									<div class="card-image">
-										<img src="images/torustest.png" alt="torustest preview" />
-									</div>
-									<div class="card-content">
-										<h4>torustest</h4>
-										<p>
-											An R package for two-sample goodness-of-fit testing on the two-dimensional
-											torus using optimal transport.
-										</p>
-										<span class="card-tag">R Package</span>
 									</div>
 								</a>
 							</div>
