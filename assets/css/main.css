@@ -37,7 +37,7 @@ body {
 ul ol,{list-style: none;
 }
 
-#list2{
+.list2{
  display: inline;
 }						
 
@@ -3362,9 +3362,70 @@ input, select, textarea {
 
 		@media screen and (max-width: 980px) {
 
+			/* Keep the menu bar on small screens (the theme hid it and relied on a hamburger menu
+			   that this site does not use). The links scroll sideways if they do not fit. */
 			#header .links {
-				display: none;
+				border-left: 0;
+				margin-left: 0;
+				padding-left: 0.5em;
+				padding-right: 1em;
+				overflow-x: auto;
+				overflow-y: hidden;
+				white-space: nowrap;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
 			}
+
+				#header .links::-webkit-scrollbar {
+					display: none;
+				}
+
+				#header .links ul li {
+					margin-left: 0.6em;
+					padding-left: 0.6em;
+				}
+
+				#header .links ul li a {
+					letter-spacing: 0.12em;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			/* On phones, let the menu wrap onto two lines instead of scrolling. */
+			body {
+				padding-top: 4.5em;
+			}
+
+			body #header,
+			body #header .links {
+				height: 4.5em;
+				line-height: normal;
+			}
+
+				#header h1 {
+					display: none;
+				}
+
+				#header .links {
+					display: flex;
+					align-items: center;
+					overflow: visible;
+					white-space: normal;
+					padding-left: 1em;
+				}
+
+				body #header .links ul {
+					line-height: 2.2em;
+				}
+
+				body #header .links ul li {
+					border-left: 0;
+					margin-left: 0;
+					padding-left: 0;
+					margin-right: 1.2em;
+				}
 
 		}
 
