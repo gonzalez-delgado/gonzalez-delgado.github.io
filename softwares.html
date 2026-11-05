@@ -12,6 +12,7 @@
 		#wrapper {
 			margin-left: 60px;
 			margin-right: 40px;
+			max-width: calc(100% - 100px);
 		}
 
 		.software-intro {
@@ -29,8 +30,9 @@
 		.software-row {
 			display: flex;
 			gap: 0.6rem;
-			align-items: flex-start;
-			flex-wrap: wrap;
+			align-items: stretch;
+			flex-wrap: nowrap;
+			width: 100%;
 		}
 
 		.software-column {
@@ -39,13 +41,18 @@
 			border-radius: 18px;
 			padding: 1.5rem;
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-			display: inline-flex;
+			display: flex;
 			flex-direction: column;
-			align-items: flex-start;
-			width: fit-content;
-			max-width: 100%;
+			align-items: stretch;
+			min-width: 0;
 			box-sizing: border-box;
 		}
+
+		/* flex-grow = number of cards; flex-basis = fixed overhead (padding, border, gaps
+		   between cards), so the remaining width is shared equally among all cards */
+		.software-column.genetics   { flex: 1 1 calc(3rem + 2px); }
+		.software-column.general    { flex: 3 3 calc(3rem + 2px + 2rem); }
+		.software-column.structural { flex: 2 2 calc(3rem + 2px + 1rem); }
 
 		.software-column h3 {
 			margin-top: 0;
@@ -54,36 +61,25 @@
 			letter-spacing: 0.02em;
 			border-bottom: 2px solid rgba(0, 0, 0, 0.08);
 			padding-bottom: 0.5rem;
-			display: inline-block;
+			align-self: flex-start;
 		}
 
 		.card-scroll {
-			max-width: 100%;
-			overflow-x: auto;
-			padding-bottom: 0.3rem;
-		}
-
-		.card-scroll::-webkit-scrollbar {
-			height: 6px;
-		}
-
-		.card-scroll::-webkit-scrollbar-thumb {
-			background: rgba(0, 0, 0, 0.2);
-			border-radius: 3px;
+			flex: 1;
+			display: flex;
 		}
 
 		.card-grid {
-			display: inline-flex;
+			display: grid;
+			grid-auto-flow: column;
+			grid-auto-columns: minmax(0, 1fr);
 			gap: 1rem;
-			align-items: stretch;
-			flex-wrap: nowrap;
-			width: max-content;
+			width: 100%;
 		}
 
 		.software-card {
-			flex: 0 0 230px;
-			width: 230px;
-			height: 405px;
+			min-width: 0;
+			min-height: 405px;
 			display: flex;
 			flex-direction: column;
 			text-decoration: none;
@@ -132,14 +128,18 @@
 			display: flex;
 			flex-direction: column;
 			flex: 1;
+			container-type: inline-size;
 		}
 
 		.card-content h4 {
 			margin: 0 0 0.45rem 0;
-			font-size: 1.05rem;
+			/* shrink long titles (e.g. MANIFOLDTEST) when cards get narrow */
+			font-size: min(1.05rem, 11cqi);
 			font-weight: 600;
 			color: #222;
 			line-height: 1.2;
+			letter-spacing: 0.12em;
+			white-space: nowrap;
 		}
 
 		.card-content p {
@@ -176,14 +176,27 @@
 			#wrapper {
 				margin-left: 20px;
 				margin-right: 20px;
+				max-width: calc(100% - 40px);
 			}
 
 			.software-row {
 				flex-direction: column;
 			}
 
-			.software-column {
-				max-width: 100%;
+			.software-column.genetics,
+			.software-column.general,
+			.software-column.structural {
+				flex: 1 1 auto;
+				width: 100%;
+			}
+
+			.card-scroll {
+				overflow-x: auto;
+			}
+
+			.card-grid {
+				grid-auto-columns: 230px;
+				width: max-content;
 			}
 		}
 	</style>
@@ -258,6 +271,20 @@
 									</div>
 								</a>
 
+								<a href="https://gonzalez-delgado.github.io/manifoldtest/" class="software-card">
+									<div class="card-image">
+										<img src="images/manifoldtest.png" alt="manifoldtest preview" class="contain" />
+									</div>
+									<div class="card-content">
+										<h4>manifoldtest</h4>
+										<p>
+											An R package for testing independence between manifold-valued data
+											(torus, hyperbolic space, Grassmannian) using distance covariance.
+										</p>
+										<span class="card-tag">R Package</span>
+									</div>
+								</a>
+
 								<a href="https://github.com/gonzalez-delgado/torustest" class="software-card">
 									<div class="card-image">
 										<img src="images/torustest.png" alt="torustest preview" class="contain" />
@@ -273,7 +300,6 @@
 								</a>
 							</div>
 						</div>
-					</div>
 					</div>
 
 					<div class="software-column structural">
@@ -309,6 +335,7 @@
 								</a>
 							</div>
 						</div>
+					</div>
 					</div>
 
 				</div>
