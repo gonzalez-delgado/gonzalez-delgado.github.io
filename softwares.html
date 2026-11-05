@@ -24,156 +24,77 @@
 			margin-bottom: 2rem;
 		}
 
-		.software-columns {
-			display: flex;
-			flex-direction: column;
-			gap: 0.6rem;
-			align-items: flex-start;
-		}
-
-		.software-row {
-			display: flex;
-			gap: 0.6rem;
-			align-items: stretch;
-			flex-wrap: nowrap;
-			width: 100%;
-		}
-
-		.software-column {
-			background: #ffffff;
-			border: 1px solid rgba(0, 0, 0, 0.08);
-			border-radius: 18px;
-			padding: 1.5rem;
-			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-			display: flex;
-			flex-direction: column;
-			align-items: stretch;
-			min-width: 0;
-			box-sizing: border-box;
-		}
-
-		/* flex-grow = number of cards; flex-basis = fixed overhead (padding, border, gaps
-		   between cards), so the remaining width is shared equally among all cards */
-		.software-column.genetics   { flex: 1 1 calc(3rem + 2px); }
-		.software-column.general    { flex: 3 3 calc(3rem + 2px + 2rem); }
-		.software-column.structural { flex: 2 2 calc(3rem + 2px + 1rem); }
-
-		.software-column h3 {
-			margin-top: 0;
-			margin-bottom: 1rem;
-			font-size: 1.25rem;
-			letter-spacing: 0.02em;
-			border-bottom: 2px solid rgba(0, 0, 0, 0.08);
-			padding-bottom: 0.5rem;
-			align-self: flex-start;
-		}
-
-		.card-scroll {
-			flex: 1;
-			display: flex;
-		}
-
-		.card-grid {
+		/* Masonry grid filled row by row (3 cards per row on wide screens, fewer on narrow
+		   ones). Each card keeps its own height; the script at the end of the page makes it
+		   span as many 1px grid rows as it is tall, so the next card sits right below it. */
+		.cards {
 			display: grid;
-			grid-auto-flow: column;
-			grid-auto-columns: minmax(0, 1fr);
-			gap: 1rem;
-			width: 100%;
+			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+			grid-auto-rows: 1px;
+			column-gap: 10px;
+			align-items: start;
+			max-width: 790px;
 		}
 
-		.software-card {
-			min-width: 0;
-			min-height: 405px;
-			display: flex;
-			flex-direction: column;
+		.card {
+			display: block;
+			background: #fff;
+			border-radius: 4px;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+			overflow: hidden;
 			text-decoration: none;
 			color: inherit;
-			background: #fff;
-			border: 1px solid rgba(0, 0, 0, 0.06);
-			border-radius: 16px;
-			overflow: hidden;
-			transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-			box-shadow: none;
-			box-sizing: border-box;
+			border-bottom: 0;
+			transition: box-shadow 0.2s ease;
 		}
 
-		.software-card:hover {
-			box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-			border-color: rgba(0, 0, 0, 0.14);
-			background-color: #fcfcfc;
+		.card:hover {
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 		}
 
-		.card-image {
-			width: 100%;
-			height: 190px;
-			background: #f6f7f9;
-			overflow: hidden;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-shrink: 0;
-		}
-
-		.card-image img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		/* Logos are scaled down to fit a fixed-height area, keeping their proportions */
+		.card img {
 			display: block;
+			width: 100%;
+			height: auto;
+			max-height: 150px;
+			object-fit: contain;
+			padding: 1.25rem 1.25rem 0 1.25rem;
+			box-sizing: border-box;
 		}
 
-		.card-image img.contain {
-			object-fit: contain;
-			padding: 1.2rem;
-			box-sizing: border-box;
+		.card img.small {
+			padding: 2rem 2.5rem 0.75rem 2.5rem;
 		}
 
 		.card-content {
-			padding: 0.9rem 1rem 1rem 1rem;
-			display: flex;
-			flex-direction: column;
-			flex: 1;
-			container-type: inline-size;
+			padding: 1.5rem 1.25rem 1.5rem 1.25rem;
 		}
 
 		.card-content h4 {
-			margin: 0 0 0.45rem 0;
-			/* shrink long titles (e.g. MANIFOLDTEST) when cards get narrow */
-			font-size: min(1.05rem, 11cqi);
-			font-weight: 600;
-			color: #222;
+			margin: 0 0 0.8rem 0;
+			font-size: 2rem;
+			font-weight: 400;
+			letter-spacing: 0;
+			text-transform: none;
 			line-height: 1.2;
-			letter-spacing: 0.12em;
-			white-space: nowrap;
+			color: #000;
 		}
 
 		.card-content p {
 			margin: 0;
 			font-size: 0.9rem;
-			line-height: 1.5;
-			color: #555;
-			flex: 1;
-		}
-
-		.card-tag {
-			display: inline-block;
-			margin-top: 0.7rem;
-			font-size: 0.7rem;
-			font-weight: 600;
-			letter-spacing: 0.03em;
-			text-transform: uppercase;
+			line-height: 1.6;
 			color: #666;
 		}
 
-		.structural .software-card {
-			border-top: 4px solid #d98c00;
-		}
-
-		.general .software-card {
-			border-top: 4px solid #2b6cb0;
-		}
-
-		.genetics .software-card {
-			border-top: 4px solid #2f855a;
+		.card-tag {
+			display: block;
+			margin-top: 0.8rem;
+			font-size: 0.7rem;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: #999;
 		}
 
 		@media screen and (max-width: 980px) {
@@ -181,26 +102,6 @@
 				margin-left: 20px;
 				margin-right: 20px;
 				max-width: calc(100% - 40px);
-			}
-
-			.software-row {
-				flex-direction: column;
-			}
-
-			.software-column.genetics,
-			.software-column.general,
-			.software-column.structural {
-				flex: 1 1 auto;
-				width: 100%;
-			}
-
-			.card-scroll {
-				overflow-x: auto;
-			}
-
-			.card-grid {
-				grid-auto-columns: 230px;
-				width: max-content;
 			}
 		}
 	</style>
@@ -232,119 +133,72 @@
 					</p>
 				</div>
 
-				<div class="software-columns">
-
-					<div class="software-row">
-					<div class="software-column genetics">
-						<h3>For Population Geneticists</h3>
-						<div class="card-scroll">
-							<div class="card-grid">
-								<a href="https://gravellab.github.io/tracts/" class="software-card">
-									<div class="card-image">
-										<img src="images/tracts.png" alt="tracts preview" class="contain" />
-									</div>
-									<div class="card-content">
-										<h4>tracts</h4>
-										<p>
-											A Python package for modelling ancestry patterns along the genome,
-											including sex-biased migration and X-chromosome admixture.
-										</p>
-										<span class="card-tag">Python Package</span>
-									</div>
-								</a>
-							</div>
+				<div class="cards">
+					<a href="https://gravellab.github.io/tracts/" class="card">
+						<img src="images/tracts.png" alt="tracts preview" class="small" />
+						<div class="card-content">
+							<h4>tracts</h4>
+							<p>A Python package for modelling ancestry patterns along the genome, including sex-biased migration and X-chromosome admixture.</p>
+							<span class="card-tag">Python Package</span>
 						</div>
-					</div>
-
-					<div class="software-column general">
-						<h3>For anyone</h3>
-						<div class="card-scroll">
-							<div class="card-grid">
-								<a href="https://gonzalez-delgado.github.io/PCIdep" class="software-card">
-									<div class="card-image">
-										<img src="images/PCIdep.png" alt="PCIdep preview" class="contain" />
-									</div>
-									<div class="card-content">
-										<h4>PCIdep</h4>
-										<p>
-											An R package for post-clustering inference under arbitrary dependence
-											between features and observations.
-										</p>
-										<span class="card-tag">R Package</span>
-									</div>
-								</a>
-
-								<a href="https://gonzalez-delgado.github.io/manifoldtest/" class="software-card">
-									<div class="card-image">
-										<img src="images/manifoldtest.png" alt="manifoldtest preview" class="contain" />
-									</div>
-									<div class="card-content">
-										<h4>manifoldtest</h4>
-										<p>
-											An R package for testing independence between manifold-valued data
-											(torus, hyperbolic space, Grassmannian) using distance covariance.
-										</p>
-										<span class="card-tag">R Package</span>
-									</div>
-								</a>
-
-								<a href="https://github.com/gonzalez-delgado/torustest" class="software-card">
-									<div class="card-image">
-										<img src="images/torustest.png" alt="torustest preview" class="contain" />
-									</div>
-									<div class="card-content">
-										<h4>torustest</h4>
-										<p>
-											An R package for two-sample goodness-of-fit testing on the two-dimensional
-											torus using optimal transport.
-										</p>
-										<span class="card-tag">R Package</span>
-									</div>
-								</a>
-							</div>
+					</a>
+					<a href="https://gonzalez-delgado.github.io/PCIdep" class="card">
+						<img src="images/PCIdep.png" alt="PCIdep preview" />
+						<div class="card-content">
+							<h4>PCIdep</h4>
+							<p>An R package for post-clustering inference under arbitrary dependence between features and observations.</p>
+							<span class="card-tag">R Package</span>
 						</div>
-					</div>
-
-					<div class="software-column structural">
-						<h3>For structural biologists</h3>
-						<div class="card-scroll">
-							<div class="card-grid">
-								<a href="https://gitlab.laas.fr/moma/methods/analysis/WARIO" class="software-card">
-									<div class="card-image">
-										<img src="images/wario.png" alt="WARIO preview" />
-									</div>
-									<div class="card-content">
-										<h4>WARIO</h4>
-										<p>
-											A Jupyter notebook to characterize intrinsically disordered protein ensembles
-											as a weighted family of contact maps.
-										</p>
-										<span class="card-tag">Jupyter Notebook</span>
-									</div>
-								</a>
-
-								<a href="https://gitlab.laas.fr/moma/WASCO" class="software-card">
-									<div class="card-image">
-										<img src="images/wasco.png" alt="WASCO preview" />
-									</div>
-									<div class="card-content">
-										<h4>WASCO</h4>
-										<p>
-											A Wasserstein-based Jupyter notebook designed to compare ensembles of
-											intrinsically disordered proteins.
-										</p>
-										<span class="card-tag">Jupyter Notebook</span>
-									</div>
-								</a>
-							</div>
+					</a>
+					<a href="https://gonzalez-delgado.github.io/manifoldtest/" class="card">
+						<img src="images/manifoldtest.png" alt="manifoldtest preview" />
+						<div class="card-content">
+							<h4>manifoldtest</h4>
+							<p>An R package for testing independence between manifold-valued data (torus, hyperbolic space, Grassmannian) using distance covariance.</p>
+							<span class="card-tag">R Package</span>
 						</div>
-					</div>
-					</div>
-
+					</a>
+					<a href="https://github.com/gonzalez-delgado/torustest" class="card">
+						<img src="images/torustest.png" alt="torustest preview" />
+						<div class="card-content">
+							<h4>torustest</h4>
+							<p>An R package for two-sample goodness-of-fit testing on the two-dimensional torus using optimal transport.</p>
+							<span class="card-tag">R Package</span>
+						</div>
+					</a>
+					<a href="https://gitlab.laas.fr/moma/methods/analysis/WARIO" class="card">
+						<img src="images/wario.png" alt="WARIO preview" />
+						<div class="card-content">
+							<h4>WARIO</h4>
+							<p>A Jupyter notebook to characterize intrinsically disordered protein ensembles as a weighted family of contact maps.</p>
+							<span class="card-tag">Jupyter Notebook</span>
+						</div>
+					</a>
+					<a href="https://gitlab.laas.fr/moma/WASCO" class="card">
+						<img src="images/wasco.png" alt="WASCO preview" />
+						<div class="card-content">
+							<h4>WASCO</h4>
+							<p>A Wasserstein-based Jupyter notebook designed to compare ensembles of intrinsically disordered proteins.</p>
+							<span class="card-tag">Jupyter Notebook</span>
+						</div>
+					</a>
 				</div>
 			</section>
 		</div>
 
 	</div>
+	<script>
+		// Masonry: each card spans (its height + 10px gap) grid rows of 1px; the grid then
+		// places every card in the first free spot, so cards fill the gaps left by shorter ones.
+		(function () {
+			var layout = function () {
+				document.querySelectorAll('.cards .card').forEach(function (c) {
+					c.style.gridRowEnd = 'span ' + Math.ceil(c.getBoundingClientRect().height + 10);
+				});
+			};
+			window.addEventListener('load', layout);
+			window.addEventListener('resize', layout);
+		})();
+	</script>
 </body>
 </html>
