@@ -3747,3 +3747,23 @@ input, select, textarea {
 	
 				
 #nav { list-style: none;}
+
+/* Content links: theme teal with a dotted underline, so they stand out from plain text.
+   Menu links, icons, the profile picture, software cards and the red [url]/[HAL] tags
+   keep their own style. */
+	#main a:not(.card):not(:has(mark)),
+	#sidebar a:not(.image):not(.icon):not(.fab):not(.ai) {
+		color: #1a8077;
+		border-bottom: dotted 1px rgba(46, 186, 174, 0.8);
+	}
+
+	#main a:not(.card):not(:has(mark)):hover,
+	#sidebar a:not(.image):not(.icon):not(.fab):not(.ai):hover {
+		color: #2ebaae !important;
+		border-bottom-color: #2ebaae;
+	}
+
+/* Orange [url]/[HAL]/... tags: dotted underline in their own colour */
+	#main a:has(mark.red) {
+		border-bottom: dotted 1px rgba(255, 87, 51, 0.8);
+	}

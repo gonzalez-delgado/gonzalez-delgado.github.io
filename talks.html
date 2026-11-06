@@ -13,7 +13,22 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 		<style>
+			/* Same layout as Publications: a narrow left column (years) in the margin,
+			   entries aligned with the section titles, one piece of information per line. */
+			#main section { padding-left: 90px; }
 			.block { width: 100%; }
+			.item { display: grid; grid-template-columns: 90px 1fr; margin: 0 0 1.4em -90px; line-height: 1.6; }
+			.item-side { font-size: 0.9em; color: #999; padding-top: 0.1em; }
+			.item-title { color: #000; }
+			.item.compact { margin-bottom: 0.6em; }
+			/* Space between sections */
+			#main h4 { margin-top: 3.5rem; }
+			#main h3 + .block > h4:first-child { margin-top: 0; }
+			#main .block + h3 { margin-top: 4.5rem; }
+			@media screen and (max-width: 736px) {
+				#main section { padding-left: 0; }
+				.item { display: block; margin-left: 0; }
+			}
 		</style>
 	</head>
 
@@ -40,73 +55,86 @@
 			<div id="main">
 				<section>
 					<div class="row">
-
 						<h3>Selected talks</h3>
 
 						<div class="block">
 
-							<h4>Invited talks and lectures</h4>
-							<ul>
-								<li>Inference after human genetic clustering.
-									<ul class="list2">
-										<li type="circle"><a href="https://mascotnum2026.sciencesconf.org/">MASCOT-NUM: Statistics and uncertainty quantification for environmental and health applications</a>. Rennes, 2026.</li>
-									</ul>
-								</li>
-								<li>Post-clustering inference under dependence.
-									<ul class="list2">
-										<li type="circle"><a href="https://mas2024.sciencesconf.org/">Journées of the SMAI-MAS group (Modélisation Aléatoire et Statistique)</a>. Poitiers, Aug. 2024.</li>
-									</ul>
-								</li>
-								<li>WASCO: A Wasserstein-based statistical tool to compare conformational ensembles of intrinsically disordered proteins.
-									<ul class="list2">
-										<li type="circle">Lecture and practical session in <a href="http://algosb2022.galaxy.ibpc.fr/">Algorithms in Structural Bioinformatics (AlgoSB) winter school</a>: <i>"Intrinsic Disorder in Proteins"</i>. Institute of Scientific Studies of Cargèse, Corsica, Nov. 2022.
-											<a href="docs/WASCO__AlgoSB_slides.pdf">[<mark class="red">lecture slides</mark>]</a>
-											<a href="docs/WASCO%20(Practical%20Session%2025-11%20AlgoSB%202022).ipynb" download="WASCO_practical.ipynb">[<mark class="red">practical session</mark>]</a></li>
-									</ul>
-								</li>
-							</ul>
-
-							<h4>Selected conferences and seminars</h4>
-							<ul>
-								<li>Inference after human genetic clustering.
-									<ul class="list2">
-										<li type="circle"><a href="https://smpgd2026.sciencesconf.org/">SMPGD (Statistical Methods for Post Genomic Data) 2026</a>. Grenoble, Jan. 2026.<!-- <a href="docs/SMPGD_GonzalezDelgado.pdf">[<mark class="red">slides</mark>]</a> --></li>
-									</ul>
-								</li>
-								<li>Post-clustering inference under dependence.
-									<ul class="list2">
-										<li type="circle"><a href="https://isbiostat.org/">13th International Conference on Multiple Comparison Procedures</a>. Temple University, Philadelphia, Aug. 2025. <a href="docs/MCP_2025.pdf">[<mark class="red">slides</mark>]</a></li>
-										<li type="circle"><a href="https://www.selectiveinferenceseminar.com/">International Seminar on Selective Inference</a>. Online, Feb. 2024. <a href="https://drive.google.com/file/d/1lAZJMb6OohRLxuoxIPO2wJHi_0ow4YKh/view?usp=drive_link">[<mark class="red">video</mark>]</a></li>
-										<li type="circle"><a href="https://irmar.univ-rennes.fr/seminars?f%5B0%5D=seminar_type%3A240">IRMAR (Institut de Recherche Mathématique de Rennes) statistics seminar</a>. Rennes, Oct. 2023.</li>
-									</ul>
-								</li>
-								<li>Statistical methods for the investigation of highly-flexible proteins.
-									<ul class="list2">
-										<li type="circle"><a href="https://www.cbs.cnrs.fr/index.php/fr/">Centre de Biologie Structurale (CBS)</a> seminar. Montpellier, May 2023.</li>
-									</ul>
-								</li>
-								<li>WASCO: A Wasserstein-based statistical tool to compare conformational ensembles of intrinsically disordered proteins.
-									<ul class="list2">
-										<li type="circle"><a href="https://ggmm2023.sciencesconf.org/">GGMM (French Graphical and Molecular Modelling Group) 2023 - Young Modellers Conference</a>. Toulouse, May 2023. <a href="docs/WASCO_GGMM_slides.pdf">[<mark class="red">slides</mark>]</a></li>
-									</ul>
-								</li>
-								<li>Goodness-of-fit tests on the flat torus based on Wasserstein distance and their relevance to structural biology.
-									<ul class="list2">
-										<!-- <li type="circle"><a href="http://www.nathalievialaneix.eu/stat_tlse/">Journée toulousaine "Statistique pour la Biologie"</a>. INRAE center Occitanie-Toulouse, Nov. 2022. <a href="docs/inrae.pdf">[<mark class="red">slides</mark>]</a></li> -->
-										<!-- <li type="circle"><a href="http://www.cmstatistics.org/CMStatistics2021/">14th International Conference of the ERCIM WG on Computational and Methodological Statistics (CMStatistics 2021)</a>. King's College London, Dec. 2021.</li> -->
-										<li type="circle"><a href="https://www.gdr-isis.fr/">GdR ISIS</a> meeting on <a href="https://www.gdr-isis.fr/index.php/reunion/461/">Optimal Transport and Statistical Learning</a>. Institut Henri Poincaré, Paris, Nov. 2021.</li>
-										<li type="circle"><a href="https://jds2021.sciencesconf.org/">52nd Journées de Statistiques of the French Society of Statistics (SFdS)</a>. Côte d'Azur University, Nice, Jun. 2021.</li>
-									</ul>
-								</li>
-							</ul>
-
-							<h4>Scientific dissemination</h4>
-							<ul>
-								<li>How to estimate cancer survival (an overview). Dissemination for non-statisticians. <a href="https://indico.math.cnrs.fr/category/575/">IMT PhD seminar</a>. Toulouse, Mar. 2022. <a href="docs/net_survival_IMT.pdf">[<mark class="red">slides</mark>]</a></li>
-							</ul>
-
+						<h4>Invited talks and lectures</h4>
+						<div class="item">
+							<div class="item-side">2026</div>
+							<div class="item-body">
+								<div class="item-title">Inference after human genetic clustering</div>
+								<div><a href="https://mascotnum2026.sciencesconf.org/">MASCOT-NUM 2026</a>: Statistics and uncertainty quantification for environmental and health applications. Rennes, 2026.</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-side">2024</div>
+							<div class="item-body">
+								<div class="item-title">Post-clustering inference under dependence</div>
+								<div><a href="https://mas2024.sciencesconf.org/">Journées MAS 2024</a>: SMAI group Modélisation Aléatoire et Statistique. Poitiers, Aug. 2024.</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-side">2022</div>
+							<div class="item-body">
+								<div class="item-title">WASCO: A Wasserstein-based statistical tool to compare conformational ensembles of intrinsically disordered proteins</div>
+								<div><a href="http://algosb2022.galaxy.ibpc.fr/">AlgoSB 2022</a>: Algorithms in Structural Bioinformatics winter school, <i>Intrinsic Disorder in Proteins</i>. Institute of Scientific Studies of Cargèse, Corsica, Nov. 2022.</div>
+								<div>Lecture and practical session. <a href="docs/WASCO__AlgoSB_slides.pdf">[<mark class="red">lecture slides</mark>]</a> <a href="docs/WASCO%20(Practical%20Session%2025-11%20AlgoSB%202022).ipynb" download="WASCO_practical.ipynb">[<mark class="red">practical session</mark>]</a></div>
+							</div>
 						</div>
 
+						<h4>Selected conferences and seminars</h4>
+						<div class="item">
+							<div class="item-side">2026</div>
+							<div class="item-body">
+								<div class="item-title">Inference after human genetic clustering</div>
+								<div><a href="https://smpgd2026.sciencesconf.org/">SMPGD 2026</a>: Statistical Methods for Post Genomic Data. Grenoble, Jan. 2026.<!-- <a href="docs/SMPGD_GonzalezDelgado.pdf">[<mark class="red">slides</mark>]</a> --></div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-side">2023–2025</div>
+							<div class="item-body">
+								<div class="item-title">Post-clustering inference under dependence</div>
+								<div><a href="https://isbiostat.org/">MCP 2025</a>: 13th International Conference on Multiple Comparison Procedures. Temple University, Philadelphia, Aug. 2025. <a href="docs/MCP_2025.pdf">[<mark class="red">slides</mark>]</a></div>
+								<div><a href="https://www.selectiveinferenceseminar.com/">International Seminar on Selective Inference</a>. Online, Feb. 2024. <a href="https://drive.google.com/file/d/1lAZJMb6OohRLxuoxIPO2wJHi_0ow4YKh/view?usp=drive_link">[<mark class="red">video</mark>]</a></div>
+								<div><a href="https://irmar.univ-rennes.fr/seminars?f%5B0%5D=seminar_type%3A240">IRMAR statistics seminar</a>: Institut de Recherche Mathématique de Rennes. Rennes, Oct. 2023.</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-side">2023</div>
+							<div class="item-body">
+								<div class="item-title">Statistical methods for the investigation of highly-flexible proteins</div>
+								<div><a href="https://www.cbs.cnrs.fr/index.php/fr/">CBS seminar</a>: Centre de Biologie Structurale. Montpellier, May 2023.</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-side">2023</div>
+							<div class="item-body">
+								<div class="item-title">WASCO: A Wasserstein-based statistical tool to compare conformational ensembles of intrinsically disordered proteins</div>
+								<div><a href="https://ggmm2023.sciencesconf.org/">GGMM 2023</a>: Young Modellers Conference of the French Graphical and Molecular Modelling Group. Toulouse, May 2023. <a href="docs/WASCO_GGMM_slides.pdf">[<mark class="red">slides</mark>]</a></div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-side">2021</div>
+							<div class="item-body">
+								<div class="item-title">Goodness-of-fit tests on the flat torus based on Wasserstein distance and their relevance to structural biology</div>
+								<!-- <div><a href="http://www.nathalievialaneix.eu/stat_tlse/">Journée toulousaine "Statistique pour la Biologie"</a>. INRAE center Occitanie-Toulouse, Nov. 2022. <a href="docs/inrae.pdf">[<mark class="red">slides</mark>]</a></div> -->
+								<!-- <div><a href="http://www.cmstatistics.org/CMStatistics2021/">CMStatistics 2021</a>: 14th International Conference of the ERCIM WG on Computational and Methodological Statistics. King's College London, Dec. 2021.</div> -->
+								<div><a href="https://www.gdr-isis.fr/index.php/reunion/461/">GdR ISIS meeting</a>: Optimal Transport and Statistical Learning. Institut Henri Poincaré, Paris, Nov. 2021.</div>
+								<div><a href="https://jds2021.sciencesconf.org/">JdS 2021</a>: 52nd Journées de Statistique of the French Society of Statistics (SFdS). Côte d'Azur University, Nice, Jun. 2021.</div>
+							</div>
+						</div>
+
+						<h4>Scientific dissemination</h4>
+						<div class="item">
+							<div class="item-side">2022</div>
+							<div class="item-body">
+								<div class="item-title">How to estimate cancer survival (an overview)</div>
+								<div><a href="https://indico.math.cnrs.fr/category/575/">IMT PhD seminar</a>: dissemination for non-statisticians. Toulouse, Mar. 2022. <a href="docs/net_survival_IMT.pdf">[<mark class="red">slides</mark>]</a></div>
+							</div>
+						</div>
+
+						</div>
 					</div>
 				</section>
 			</div>

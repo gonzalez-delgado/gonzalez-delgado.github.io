@@ -13,14 +13,29 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
 		<style>
-			/* Journal tags ([JASA], [PNAS], ...) sit in a left margin column; the bullets
-			   stay aligned with the section titles. */
+			/* Publications: journal tag in a left margin column; title, authors, journal
+			   and links on separate lines, aligned with the section titles. */
 			#main section { padding-left: 90px; }
 			#main ul { padding-left: 1em; }
-			#main ul > label { margin-left: calc(-1em - 90px); width: 80px; text-align: left; }
+			#main .row > .column { width: 100%; }
+			.pub { display: grid; grid-template-columns: 90px 1fr; margin: 0 0 1.4em -90px; line-height: 1.6; }
+			.pub-tag { font-size: 0.9em; padding-top: 0.1em; }
+			.pub-title { color: #000; }
+			/* Space between sections */
+			#main h4 { margin-top: 3.5rem; }
+			#main h3 + .column > h4:first-child { margin-top: 0; }
+			#main .row .row > .column > h4:first-child { margin-top: 2rem; }
+			/* BibTeX boxes opened with [bib] */
+			pre.bibtex { margin: 0.5em 0 0 0; padding: 0.8em 1em; background: rgba(46, 186, 174, 0.08); border-radius: 6px; font-size: 0.78em; line-height: 1.5; white-space: pre; overflow-x: auto; }
+			pre.bibtex .bt-type { color: #1a8077; font-weight: 600; }
+			pre.bibtex .bt-key { color: #FF5733; }
+			pre.bibtex .bt-field { color: #1a8077; }
+			pre.bibtex .bt-val { color: #333; }
+			/* My name: solid underline drawn like the link underlines, at the same height */
+			#main u { text-decoration: none; border-bottom: solid 1px currentColor; }
 			@media screen and (max-width: 736px) {
 				#main section { padding-left: 0; }
-				#main ul > label { float: none; display: block; width: auto; margin: 0.5em 0 0 0; }
+				.pub { display: block; margin-left: 0; }
 			}
 		</style>
 	</head>
@@ -53,80 +68,175 @@
 								<h3>Publications</h3>
 
 																				 										<div class="column">
-											<h4>Preprints and submitted manuscripts</h4>
-											<ul>
+							<h4>Preprints and submitted manuscripts</h4>
+							<div class="pub">
+								<div class="pub-tag"></div>
+								<div class="pub-body">
+									<div class="pub-title">Time-continuous Markov chains to describe genetic transmission and their application to model local ancestry via phase-type distributions</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, Serdiuk A, Krim-Yee V and <a href="https://gravellab.github.io/">Gravel, S</a></div>
+									<div class="pub-venue">2026.</div>
+									<div class="pub-links"><a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<!-- <div class="pub-links"><a href="">[<mark class="red">bioRxiv</mark>]</a> <a href="">[<mark class="red">software</mark>]</a></div> -->
+									<pre class="bibtex" hidden><span class="bt-type">@unpublished</span>{<span class="bt-key">gonzalezdelgado2026markov</span>,
+  <span class="bt-field">title </span> = <span class="bt-val">{Time-continuous {M}arkov chains to describe genetic transmission and their application to model local ancestry via phase-type distributions}</span>,
+  <span class="bt-field">author</span> = <span class="bt-val">{González-Delgado, Javier and Serdiuk, Andrii and Krim-Yee, Victor and Gravel, Simon}</span>,
+  <span class="bt-field">year  </span> = <span class="bt-val">{2026}</span>,
+  <span class="bt-field">note  </span> = <span class="bt-val">{Preprint}</span>
+}</pre>
+								</div>
+							</div>
+							<div class="pub">
+								<div class="pub-tag"></div>
+								<div class="pub-body">
+									<div class="pub-title">Evidence for the Progressive Improvement of All-Atom Force Fields in Reproducing Local Conformational Preferences of Flexible Peptides</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a>, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea6">Barducci A</a> and <a href="https://scholar.google.com/citations?user=fK55KfEAAAAJ&amp;hl=en">Paloni, M</a></div>
+									<div class="pub-venue"><i>bioRxiv</i>:12.22.695171, 2025.</div>
+									<div class="pub-links"><a href="https://doi.org/10.64898/2025.12.22.695171">[<mark class="red">bioRxiv</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2025evidence</span>,
+  <span class="bt-field">title  </span> = <span class="bt-val">{Evidence for the Progressive Improvement of All-Atom Force Fields in Reproducing Local Conformational Preferences of Flexible Peptides}</span>,
+  <span class="bt-field">author </span> = <span class="bt-val">{González-Delgado, Javier and Cortés, Juan and Barducci, Alessandro and Paloni, Matteo}</span>,
+  <span class="bt-field">journal</span> = <span class="bt-val">{bioRxiv}</span>,
+  <span class="bt-field">year   </span> = <span class="bt-val">{2025}</span>,
+  <span class="bt-field">doi    </span> = <span class="bt-val">{10.64898/2025.12.22.695171}</span>
+}</pre>
+								</div>
+							</div>
 
-											<li><u>González-Delgado J</u>, Serdiuk A, Krim-Yee V and <a href="https://gravellab.github.io/">Gravel, S</a>: <mark class="black">Time-continuous Markov chains to describe genetic transmission and their application to model local ancestry via phase-type distributions</mark>, 2026.
-											<!--	<a href="https://doi.org/10.64898/2025.12.22.695171">[<mark class="red">biorXiv</mark>]</a>. -->
-											<!--	<a href="https://github.com/gonzalez-delgado/PCIdep">[<mark class="red">software</mark>]</a> -->
-												</li>
+							<h4>Journal papers</h4>
+							<div class="pub">
+								<div class="pub-tag"><a href="https://www.tandfonline.com/journals/uasa20">[<mark class="red">JASA</mark>]</a></div>
+								<div class="pub-body">
+									<div class="pub-title">Post-clustering Inference under Dependence</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, Deronzier M, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a> and <a href="https://pneuvial.github.io/">Neuvial P</a></div>
+									<div class="pub-venue"><i>J. Amer. Statist. Assoc.</i>, 1–13, 2026.</div>
+									<div class="pub-links"><a href="https://doi.org/10.1080/01621459.2026.2707221">[<mark class="red">url</mark>]</a> <a href="https://laas.hal.science/hal-04250364">[<mark class="red">HAL</mark>]</a> <a href="https://gonzalez-delgado.github.io/PCIdep">[<mark class="red">software</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2026post</span>,
+  <span class="bt-field">title  </span> = <span class="bt-val">{Post-clustering Inference under Dependence}</span>,
+  <span class="bt-field">author </span> = <span class="bt-val">{González-Delgado, Javier and Deronzier, Mathis and Cortés, Juan and Neuvial, Pierre}</span>,
+  <span class="bt-field">journal</span> = <span class="bt-val">{Journal of the American Statistical Association}</span>,
+  <span class="bt-field">pages  </span> = <span class="bt-val">{1--13}</span>,
+  <span class="bt-field">year   </span> = <span class="bt-val">{2026}</span>,
+  <span class="bt-field">doi    </span> = <span class="bt-val">{10.1080/01621459.2026.2707221}</span>
+}</pre>
+								</div>
+							</div>
+							<div class="pub">
+								<div class="pub-tag"><a href="https://www.pnas.org/">[<mark class="red">PNAS</mark>]</a></div>
+								<div class="pub-body">
+									<div class="pub-title">The dependence of the amino acid backbone conformation on the translated synonymous codon is not statistically significant</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, Mier P, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://pneuvial.github.io/">Neuvial P</a> and <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a></div>
+									<div class="pub-venue"><i>Proc. Natl. Acad. Sci. U.S.A.</i>, 122(24): e2503264122, 2025.</div>
+									<div class="pub-links"><a href="https://doi.org/10.1073/pnas.2503264122">[<mark class="red">url</mark>]</a> <a href="https://cnrs.hal.science/CREST/hal-05113237v1">[<mark class="red">HAL</mark>]</a> <a href="https://github.com/gonzalez-delgado/synco">[<mark class="red">code</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2025dependence</span>,
+  <span class="bt-field">title  </span> = <span class="bt-val">{The dependence of the amino acid backbone conformation on the translated synonymous codon is not statistically significant}</span>,
+  <span class="bt-field">author </span> = <span class="bt-val">{González-Delgado, Javier and Mier, Pablo and Bernadó, Pau and Neuvial, Pierre and Cortés, Juan}</span>,
+  <span class="bt-field">journal</span> = <span class="bt-val">{Proceedings of the National Academy of Sciences}</span>,
+  <span class="bt-field">volume </span> = <span class="bt-val">{122}</span>,
+  <span class="bt-field">number </span> = <span class="bt-val">{24}</span>,
+  <span class="bt-field">pages  </span> = <span class="bt-val">{e2503264122}</span>,
+  <span class="bt-field">year   </span> = <span class="bt-val">{2025}</span>,
+  <span class="bt-field">doi    </span> = <span class="bt-val">{10.1073/pnas.2503264122}</span>
+}</pre>
+								</div>
+							</div>
+							<div class="pub">
+								<div class="pub-tag"><a href="https://academic.oup.com/bioinformatics">[<mark class="red">Bioinfo</mark>]</a></div>
+								<div class="pub-body">
+									<div class="pub-title">Weighted families of contact maps to characterize conformational ensembles of (highly-)flexible proteins</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a> and <a href="https://pneuvial.github.io/">Neuvial P</a></div>
+									<div class="pub-venue"><i>Bioinformatics</i>, 40(11): btae627, 2024.</div>
+									<div class="pub-links"><a href="https://doi.org/10.1093/bioinformatics/btae627">[<mark class="red">url</mark>]</a> <a href="https://laas.hal.science/hal-04749226">[<mark class="red">HAL</mark>]</a> <a href="https://gitlab.laas.fr/moma/methods/analysis/WARIO">[<mark class="red">software</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2024weighted</span>,
+  <span class="bt-field">title  </span> = <span class="bt-val">{Weighted families of contact maps to characterize conformational ensembles of (highly-)flexible proteins}</span>,
+  <span class="bt-field">author </span> = <span class="bt-val">{González-Delgado, Javier and Bernadó, Pau and Neuvial, Pierre and Cortés, Juan}</span>,
+  <span class="bt-field">journal</span> = <span class="bt-val">{Bioinformatics}</span>,
+  <span class="bt-field">volume </span> = <span class="bt-val">{40}</span>,
+  <span class="bt-field">number </span> = <span class="bt-val">{11}</span>,
+  <span class="bt-field">pages  </span> = <span class="bt-val">{btae627}</span>,
+  <span class="bt-field">year   </span> = <span class="bt-val">{2024}</span>,
+  <span class="bt-field">doi    </span> = <span class="bt-val">{10.1093/bioinformatics/btae627}</span>
+}</pre>
+								</div>
+							</div>
+							<div class="pub">
+								<div class="pub-tag"><a href="https://imstat.org/journals-and-publications/electronic-journal-of-statistics/">[<mark class="red">EJS</mark>]</a></div>
+								<div class="pub-body">
+									<div class="pub-title">Two-sample goodness-of-fit tests on the flat torus based on Wasserstein distance and their relevance to structural biology</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, <a href="https://www.alberto-gonzalez-sanz.com/">González-Sanz A</a>, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a> and <a href="https://pneuvial.github.io/">Neuvial P</a></div>
+									<div class="pub-venue"><i>Electron. J. Statist.</i>, 17(1): 1547–1586, 2023.</div>
+									<div class="pub-links"><a href="https://doi.org/10.1214/23-EJS2135">[<mark class="red">url</mark>]</a> <a href="https://hal.archives-ouvertes.fr/hal-03369795">[<mark class="red">HAL</mark>]</a> <a href="https://arxiv.org/abs/2108.00165">[<mark class="red">arXiv</mark>]</a> <a href="https://github.com/gonzalez-delgado/torustest">[<mark class="red">software</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2023twosample</span>,
+  <span class="bt-field">title  </span> = <span class="bt-val">{Two-sample goodness-of-fit tests on the flat torus based on {W}asserstein distance and their relevance to structural biology}</span>,
+  <span class="bt-field">author </span> = <span class="bt-val">{González-Delgado, Javier and González-Sanz, Alberto and Cortés, Juan and Neuvial, Pierre}</span>,
+  <span class="bt-field">journal</span> = <span class="bt-val">{Electronic Journal of Statistics}</span>,
+  <span class="bt-field">volume </span> = <span class="bt-val">{17}</span>,
+  <span class="bt-field">number </span> = <span class="bt-val">{1}</span>,
+  <span class="bt-field">pages  </span> = <span class="bt-val">{1547--1586}</span>,
+  <span class="bt-field">year   </span> = <span class="bt-val">{2023}</span>,
+  <span class="bt-field">doi    </span> = <span class="bt-val">{10.1214/23-EJS2135}</span>
+}</pre>
+								</div>
+							</div>
+							<div class="pub">
+								<div class="pub-tag"><a href="https://www.sciencedirect.com/journal/journal-of-molecular-biology">[<mark class="red">JMB</mark>]</a></div>
+								<div class="pub-body">
+									<div class="pub-title">WASCO: A Wasserstein-based statistical tool to compare conformational ensembles of intrinsically disordered proteins</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, Sagar A, Zanon C, Lindorff-Larsen K, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://pneuvial.github.io/">Neuvial P</a> and <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a></div>
+									<div class="pub-venue"><i>J. Mol. Biol.</i>, 435(14): 168053, 2023.</div>
+									<div class="pub-links"><a href="https://doi.org/10.1016/j.jmb.2023.168053">[<mark class="red">url</mark>]</a> <a href="https://hal.laas.fr/hal-04056662v1">[<mark class="red">HAL</mark>]</a> <a href="https://gitlab.laas.fr/moma/WASCO">[<mark class="red">software</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2023wasco</span>,
+  <span class="bt-field">title  </span> = <span class="bt-val">{{WASCO}: A {W}asserstein-based statistical tool to compare conformational ensembles of intrinsically disordered proteins}</span>,
+  <span class="bt-field">author </span> = <span class="bt-val">{González-Delgado, Javier and Sagar, Amin and Zanon, Christophe and Lindorff-Larsen, Kresten and Bernadó, Pau and Neuvial, Pierre and Cortés, Juan}</span>,
+  <span class="bt-field">journal</span> = <span class="bt-val">{Journal of Molecular Biology}</span>,
+  <span class="bt-field">volume </span> = <span class="bt-val">{435}</span>,
+  <span class="bt-field">number </span> = <span class="bt-val">{14}</span>,
+  <span class="bt-field">pages  </span> = <span class="bt-val">{168053}</span>,
+  <span class="bt-field">year   </span> = <span class="bt-val">{2023}</span>,
+  <span class="bt-field">doi    </span> = <span class="bt-val">{10.1016/j.jmb.2023.168053}</span>
+}</pre>
+								</div>
+							</div>
+							<div class="pub">
+								<div class="pub-tag"><a href="https://www.sciencedirect.com/journal/journal-of-structural-biology/">[<mark class="red">JSB</mark>]</a></div>
+								<div class="pub-body">
+									<div class="pub-title">Statistical proofs of the interdependence between nearest neighbor effects on polypeptide backbone conformations</div>
+									<div class="pub-authors"><u>González-Delgado J</u>, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://pneuvial.github.io/">Neuvial P</a> and <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a></div>
+									<div class="pub-venue"><i>J. Struct. Biol.</i>, 214(4): 107907, 2022.</div>
+									<div class="pub-links"><a href="https://doi.org/10.1016/j.jsb.2022.107907">[<mark class="red">url</mark>]</a> <a href="https://hal.laas.fr/hal-03826233">[<mark class="red">HAL</mark>]</a> <a href="https://github.com/gonzalez-delgado/STINA">[<mark class="red">code</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2022statistical</span>,
+  <span class="bt-field">title  </span> = <span class="bt-val">{Statistical proofs of the interdependence between nearest neighbor effects on polypeptide backbone conformations}</span>,
+  <span class="bt-field">author </span> = <span class="bt-val">{González-Delgado, Javier and Bernadó, Pau and Neuvial, Pierre and Cortés, Juan}</span>,
+  <span class="bt-field">journal</span> = <span class="bt-val">{Journal of Structural Biology}</span>,
+  <span class="bt-field">volume </span> = <span class="bt-val">{214}</span>,
+  <span class="bt-field">number </span> = <span class="bt-val">{4}</span>,
+  <span class="bt-field">pages  </span> = <span class="bt-val">{107907}</span>,
+  <span class="bt-field">year   </span> = <span class="bt-val">{2022}</span>,
+  <span class="bt-field">doi    </span> = <span class="bt-val">{10.1016/j.jsb.2022.107907}</span>
+}</pre>
+								</div>
+							</div>
 
-											<li><u>González-Delgado J</u>, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a>, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea6">Barducci A</a> and Paloni, M: <mark class="black">Evidence for the Progressive Improvement of All-Atom Force Fields in Reproducing Local Conformational Preferences of Flexible Peptides</mark>, 2025, bioRxiv:12.22.695171.
-												<a href="https://doi.org/10.64898/2025.12.22.695171">[<mark class="red">bioRxiv</mark>]</a>.
-											<!--	<a href="https://github.com/gonzalez-delgado/PCIdep">[<mark class="red">software</mark>]</a> -->
-												</li>
+							<h4>Scientific dissemination (in French)</h4>
+							<div class="pub">
+								<div class="pub-tag"><a href="http://smai.emath.fr/spip.php?rubrique36&amp;lang=fr">[<mark class="red">MATAPLI</mark>]</a></div>
+								<div class="pub-body">
+									<div class="pub-title">Statistique pour démêler le désordre des protéines</div>
+									<div class="pub-authors"><u>González-Delgado J</u></div>
+									<div class="pub-venue"><i>MATAPLI</i>, 138, 2025 (Dissemination for non-specialized mathematicians).</div>
+									<div class="pub-links"><a href="http://smai.emath.fr/IMG/pdf/matapli138web.pdf#page=51">[<mark class="red">url</mark>]</a> <a href="#" class="bib-toggle" role="button" aria-expanded="false">[<mark class="red">bib</mark>]</a></div>
+									<pre class="bibtex" hidden><span class="bt-type">@article</span>{<span class="bt-key">gonzalezdelgado2025matapli</span>,
+  <span class="bt-field">title   </span> = <span class="bt-val">{Statistique pour démêler le désordre des protéines}</span>,
+  <span class="bt-field">author  </span> = <span class="bt-val">{González-Delgado, Javier}</span>,
+  <span class="bt-field">journal </span> = <span class="bt-val">{MATAPLI}</span>,
+  <span class="bt-field">number  </span> = <span class="bt-val">{138}</span>,
+  <span class="bt-field">pages   </span> = <span class="bt-val">{49--63}</span>,
+  <span class="bt-field">year    </span> = <span class="bt-val">{2025}</span>,
+  <span class="bt-field">language</span> = <span class="bt-val">{french}</span>
+}</pre>
+								</div>
+							</div>
 
-
-											</ul>
-
-											<h4>Journal papers</h4>
-											<ul>
-
-											<label> <a href="https://www.tandfonline.com/journals/uasa20">[<mark class="red">JASA</mark>]</a></label>
-											<li><u>González-Delgado J</u>, Deronzier M, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a> and <a href="https://pneuvial.github.io/">Neuvial P</a>: <mark class="black">Post-clustering Inference under Dependence</mark>, <i>J. Amer. Statist. Assoc.</i>, 1-13. 2026.
-												<a href="https://doi.org/10.1080/01621459.2026.2707221">[<mark class="red">url</mark>]</a>
-												<a href="https://laas.hal.science/hal-04250364">[<mark class="red">HAL</mark>]</a>
-												<a href="https://gonzalez-delgado.github.io/PCIdep">[<mark class="red">software</mark>]</a>.
-												</li>
-
-
-											<label> <a href="https://www.pnas.org/">[<mark class="red">PNAS</mark>]</a></label>
-											<li><u>González-Delgado J</u>, Mier P, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://pneuvial.github.io/">Neuvial P</a> and <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a>: <mark class="black">The dependence of the amino acid backbone conformation on the translated synonymous codon is not statistically significant</mark>, <i>Proc. Natl. Acad. Sci. U.S.A.</i>, 122(24): e2503264122, 2025.
-												<a href="https://doi.org/10.1073/pnas.2503264122">[<mark class="red">url</mark>]</a>
-												<a href="https://cnrs.hal.science/CREST/hal-05113237v1">[<mark class="red">HAL</mark>]</a>
-												<a href="https://github.com/gonzalez-delgado/synco">[<mark class="red">code</mark>]</a>.
-												</li>
-
-											<label> <a href="https://academic.oup.com/bioinformatics">[<mark class="red">Bioinfo</mark>]</a></label>
-
-											<li><u>González-Delgado J</u>, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a> and <a href="https://pneuvial.github.io/">Neuvial P</a>: <mark class="black">Weighted families of contact maps to characterize conformational ensembles of (highly-)flexible proteins</mark>, <i>Bioinformatics</i>, 40(11): btae627, 2024.
-												<a href="https://doi.org/10.1093/bioinformatics/btae627">[<mark class="red">url</mark>]</a>
-												<a href="https://laas.hal.science/hal-04749226">[<mark class="red">HAL</mark>]</a>
-												<a href="https://gitlab.laas.fr/moma/methods/analysis/WARIO">[<mark class="red">software</mark>]</a>.
-												</li>
-
-											<label> <a href="https://imstat.org/journals-and-publications/electronic-journal-of-statistics/">[<mark class="red">EJS</mark>]</a></label>
-											<li><u>González-Delgado J</u>, <a href="https://www.alberto-gonzalez-sanz.com/">González-Sanz A</a>, <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a> and <a href="https://pneuvial.github.io/">Neuvial P</a>: <mark class="black">Two-sample goodness-of-fit tests on the flat torus based on Wasserstein distance and their relevance to structural biology</mark>. <i>Electron. J. Statist.</i>, 17(1): 1547–1586, 2023.
-											<a href="https://doi.org/10.1214/23-EJS2135">[<mark class="red">url</mark>]</a>
-												<a href="https://hal.archives-ouvertes.fr/hal-03369795">[<mark class="red">HAL</mark>]</a>
-												<a href="https://arxiv.org/abs/2108.00165">[<mark class="red">arXiv</mark>]</a>
-												<a href="https://github.com/gonzalez-delgado/torustest">[<mark class="red">software</mark>]</a>. </li>
-
-											<label> <a href="https://www.sciencedirect.com/journal/journal-of-molecular-biology">[<mark class="red">JMB</mark>]</a> </label> <li><u>González-Delgado J</u>, Sagar A, Zanon C, Lindorff-Larsen K, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://pneuvial.github.io/">Neuvial P</a> and <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a>: <mark class="black">WASCO: A Wasserstein-based statistical tool to compare
-conformational ensembles of intrinsically disordered proteins</mark>. <i>Journal of Molecular Biology</i>, 435(14): 168053, 2023.
-												<a href="https://doi.org/10.1016/j.jmb.2023.168053">[<mark class="red">url</mark>]</a>
-												<a href="https://hal.laas.fr/hal-04056662v1">[<mark class="red">HAL</mark>]</a>
-												<a href="https://gitlab.laas.fr/moma/WASCO">[<mark class="red">software</mark>]</a>.
-
-												</li>
-
-											<label> <a href="https://www.sciencedirect.com/journal/journal-of-structural-biology/">[<mark class="red">JSB</mark>]</a> </label> <li> <u>González-Delgado J</u>, <a href="https://www.cbs.cnrs.fr/index.php/fr/accueil-equipea2">Bernadó P</a>, <a href="https://pneuvial.github.io/">Neuvial P</a> and <a href="https://scholar.google.fr/citations?user=Hm0UA64AAAAJ&amp;hl=fr">Cortés J</a>: <mark class="black">Statistical proofs of the interdependence between nearest neighbor effects on polypeptide backbone conformations</mark>. <i> Journal of Structural Biology</i>, 214(4): 107907, 2022.
-												<a href="https://doi.org/10.1016/j.jsb.2022.107907">[<mark class="red">url</mark>]</a>
-												<a href="https://hal.laas.fr/hal-03826233">[<mark class="red">HAL</mark>]</a>
-												<a href="https://github.com/gonzalez-delgado/STINA">[<mark class="red">code</mark>]</a>.</li>
-
-											</ul>
-
-											<h4>Scientific dissemination (in French)</h4>
-
-											<ul>
-
-											<label> <a href="http://smai.emath.fr/spip.php?rubrique36&amp;lang=fr">[<mark class="red">MATAPLI</mark>]</a> </label> <li> <u>González-Delgado J</u>: <mark class="black">Statistique pour démêler le
-désordre des protéines</mark>. <i> MATAPLI, 138, 2025 (Dissemination for non-specialized mathematicians)</i> <a href="http://smai.emath.fr/IMG/pdf/matapli138web.pdf#page=51">[<mark class="red">url</mark>]</a>.</li>
-											</ul>
-
-
-										</div>
+						</div>
 
 										<div class="row">
 
@@ -173,5 +283,16 @@ désordre des protéines</mark>. <i> MATAPLI, 138, 2025 (Dissemination for non-s
 
 			</div>
 
+		<script>
+			// [bib] links open and close the BibTeX box of their publication.
+			document.querySelectorAll('.bib-toggle').forEach(function (a) {
+				a.addEventListener('click', function (e) {
+					e.preventDefault();
+					var box = a.closest('.pub-body').querySelector('pre.bibtex');
+					box.hidden = !box.hidden;
+					a.setAttribute('aria-expanded', String(!box.hidden));
+				});
+			});
+		</script>
 	</body>
 </html>
