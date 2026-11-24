@@ -11,6 +11,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/section-nav.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 		<style>
 			/* Same layout as Publications: a narrow left column (years) in the margin,
@@ -23,7 +24,8 @@
 			.item.compact { margin-bottom: 0.6em; }
 			/* Space between sections */
 			#main h4 { margin-top: 3.5rem; }
-			#main h3 + .block > h4:first-child { margin-top: 0; }
+			#main h3 + .block > h4:first-child,
+			#main .section-nav + .block > h4:first-child { margin-top: 0; }
 			#main .block + h3 { margin-top: 4.5rem; }
 			@media screen and (max-width: 736px) {
 				#main section { padding-left: 0; }
@@ -56,10 +58,13 @@
 				<section>
 					<div class="row">
 						<h3>Selected talks</h3>
+						<nav class="section-nav">
+							<a class="pill" href="#invited">Invited talks</a><a class="pill" href="#conferences">Conferences &amp; seminars</a><a class="pill" href="#dissemination">Dissemination</a>
+						</nav>
 
 						<div class="block">
 
-						<h4>Invited talks and lectures</h4>
+						<h4 id="invited">Invited talks and lectures</h4>
 						<div class="item">
 							<div class="item-side">2026</div>
 							<div class="item-body">
@@ -83,7 +88,7 @@
 							</div>
 						</div>
 
-						<h4>Selected conferences and seminars</h4>
+						<h4 id="conferences">Selected conferences and seminars</h4>
 						<div class="item">
 							<div class="item-side">2026</div>
 							<div class="item-body">
@@ -125,7 +130,7 @@
 							</div>
 						</div>
 
-						<h4>Scientific dissemination</h4>
+						<h4 id="dissemination">Scientific dissemination</h4>
 						<div class="item">
 							<div class="item-side">2022</div>
 							<div class="item-body">
@@ -140,6 +145,8 @@
 			</div>
 
 		</div>
+
+		<script src="assets/js/section-nav.js"></script>
 
 	</body>
 </html>

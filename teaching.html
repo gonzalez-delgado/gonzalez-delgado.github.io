@@ -11,6 +11,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/section-nav.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 		<style>
 			/* Same layout as Publications: a narrow left column (years) in the margin,
@@ -24,6 +25,7 @@
 			/* Space between sections */
 			#main h4 { margin-top: 3.5rem; }
 			#main h3 + .block > h4:first-child { margin-top: 0; }
+			#main .section-nav + h3 { margin-top: 0; }
 			#main .block + h3 { margin-top: 4.5rem; }
 			@media screen and (max-width: 736px) {
 				#main section { padding-left: 0; }
@@ -55,7 +57,12 @@
 			<div id="main">
 				<section>
 					<div class="row">
-						<h3>Advising</h3>
+						<h3>Teaching &amp; advising</h3>
+						<nav class="section-nav">
+							<a class="pill" href="#advising">Advising</a><a class="pill" href="#teaching">Teaching</a>
+						</nav>
+
+						<h3 id="advising">Advising</h3>
 
 						<div class="block">
 
@@ -91,7 +98,7 @@
 
 						</div>
 
-						<h3>Teaching</h3>
+						<h3 id="teaching">Teaching</h3>
 
 						<div class="block">
 
@@ -154,6 +161,8 @@
 			</div>
 
 		</div>
+
+		<script src="assets/js/section-nav.js"></script>
 
 	</body>
 </html>

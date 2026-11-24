@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/section-nav.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
 		<style>
@@ -23,7 +24,7 @@
 			.pub-title { color: #000; }
 			/* Space between sections */
 			#main h4 { margin-top: 3.5rem; }
-			#main h3 + .column > h4:first-child { margin-top: 0; }
+			#main .section-nav + .row > .column:first-child > h4:first-child { margin-top: 0; }
 			#main .row .row > .column > h4:first-child { margin-top: 2rem; }
 			/* BibTeX boxes opened with [bib] */
 			pre.bibtex { margin: 0.5em 0 0 0; padding: 0.8em 1em; background: rgba(46, 186, 174, 0.08); border-radius: 6px; font-size: 0.78em; line-height: 1.5; white-space: pre; overflow-x: auto; }
@@ -62,13 +63,14 @@
 					<div id="main">
 
 																<section>
+								<h3>Publications</h3>
+								<nav class="section-nav">
+									<a class="pill" href="#preprints">Preprints</a><a class="pill" href="#journal-papers">Journal papers</a><a class="pill" href="#dissemination">Dissemination</a><a class="pill" href="#reports">Technical reports</a>
+								</nav>
 								<div class="row">
 
-
-								<h3>Publications</h3>
-
 																				 										<div class="column">
-							<h4>Preprints and submitted manuscripts</h4>
+							<h4 id="preprints">Preprints and submitted manuscripts</h4>
 							<div class="pub">
 								<div class="pub-tag"></div>
 								<div class="pub-body">
@@ -102,7 +104,7 @@
 								</div>
 							</div>
 
-							<h4>Journal papers</h4>
+							<h4 id="journal-papers">Journal papers</h4>
 							<div class="pub">
 								<div class="pub-tag"><a href="https://www.tandfonline.com/journals/uasa20">[<mark class="red">JASA</mark>]</a></div>
 								<div class="pub-body">
@@ -216,7 +218,7 @@
 								</div>
 							</div>
 
-							<h4>Scientific dissemination (in French)</h4>
+							<h4 id="dissemination">Scientific dissemination (in French)</h4>
 							<div class="pub">
 								<div class="pub-tag"><a href="http://smai.emath.fr/spip.php?rubrique36&amp;lang=fr">[<mark class="red">MATAPLI</mark>]</a></div>
 								<div class="pub-body">
@@ -241,7 +243,7 @@
 										<div class="row">
 
 									<div class="column">
-											<h4>Technical reports and theses</h4>
+											<h4 id="reports">Technical reports and theses</h4>
 
 									PhD thesis carried out during my doctorate at the <a href="https://www.math.univ-toulouse.fr/">Toulouse Institute of Mathematics (IMT)</a> and <a href="https://www.laas.fr/">LAAS-CNRS</a>.
 
@@ -283,6 +285,7 @@
 
 			</div>
 
+		<script src="assets/js/section-nav.js"></script>
 		<script>
 			// [bib] links open and close the BibTeX box of their publication.
 			document.querySelectorAll('.bib-toggle').forEach(function (a) {
